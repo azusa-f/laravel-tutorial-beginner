@@ -1,9 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\MailTest;
-use App\Http\Controllers\MailController;
 
 
 /*
@@ -22,11 +19,6 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
-// Route::get('/mail', function () {
-//     $mail_text = "メールテストで使いたい文章";
-//     Mail::to('azusa.fujinami@axia-works.com')->send(new MailTest($mail_text));
-// });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/mail', [MailController::class,'index']);
